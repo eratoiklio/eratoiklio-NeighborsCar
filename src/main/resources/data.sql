@@ -1,0 +1,1 @@
+insert into ride(id, from, to) values(1, "Warsaw", "Paris");
