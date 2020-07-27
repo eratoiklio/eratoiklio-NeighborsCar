@@ -1,11 +1,11 @@
 package com.eratoiklio.neighborscar.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Getter
@@ -18,7 +18,9 @@ public class Ride {
     private String rideTo;
     private Date rideDate;
     private int seats;
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "id_owner")
     private User owner;
+    @ManyToMany(mappedBy = "joinedRides")
+    private List<User> joinedUser;
 }

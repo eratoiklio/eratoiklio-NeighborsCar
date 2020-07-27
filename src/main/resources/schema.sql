@@ -6,11 +6,13 @@ CREATE TABLE RIDE (
     seats INT NOT NULL,
     id_owner BIGINT NOT NULL
 );
+
 CREATE TABLE USER (
     id_user BIGINT AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(40) NOT NULL,
     surname VARCHAR(40) NOT NULL
 );
+
 CREATE TABLE BOOKED_RIDE (
     id_ride BIGINT NOT NULL,
     id_passenger BIGINT NOT NULL
