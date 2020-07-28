@@ -1,6 +1,7 @@
 package com.eratoiklio.neighborscar.ride;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,5 +15,10 @@ public class RideController {
     public List<Ride> getAllRides() {
         List<Ride> rides = service.getAllRides();
         return rides;
+    }
+
+    @PostMapping(value = "ride")
+    public List<RideDTO> getRidesByCriteria(@RequestBody RideRequest rideRequest) {
+        return null;
     }
 }
