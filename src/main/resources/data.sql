@@ -9,5 +9,5 @@ insert into ride(ride_from, ride_to, ride_date, seats,id_owner ) values ('Warsaw
 
 insert into booked_ride(id_ride,id_passenger) values (1,1);
 insert into booked_ride(id_ride,id_passenger) values (1,2);
-insert into booked_ride(id_ride,id_passenger) values (1,2);
+insert into booked_ride(id_ride,id_passenger) values (3,2);
 insert into booked_ride(id_ride,id_passenger) values (2,1);

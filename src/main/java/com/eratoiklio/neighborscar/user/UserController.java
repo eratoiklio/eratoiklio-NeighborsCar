@@ -15,15 +15,13 @@ public class UserController {
 
     @GetMapping(value = "owner/{id}")
     public OwnerDTO getOwner(@PathVariable long id) {
-        OwnerDTO ownerDTO = mapToOwnerDTO(service.getOwner(id));
+        OwnerDTO ownerDTO = OwnerDTO.mapToOwnerDTO(service.getOwner(id));
         return ownerDTO;
     }
-    private static OwnerDTO mapToOwnerDTO(User user){
-        return OwnerDTO.builder()
-        .ownerId(user.getIdUser())
-                .firstName(user.getFirstName())
-                .surname(user.getSurname())
-                .ownerRides(RideDTO.getRidesDTOFromRides(user.getOwnerRide()))
-                .build();
+    @GetMapping(value = "passenger/{id}")
+    public PassengerDTO getPassenger(@PathVariable long id) {
+        PassengerDTO passengerDTO = PassengerDTO.mapToPassengerDTO(service.getUser(id));
+        return passengerDTO;
     }
+
 }

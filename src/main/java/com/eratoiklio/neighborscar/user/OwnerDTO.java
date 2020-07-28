@@ -15,4 +15,12 @@ public class OwnerDTO {
     private String surname;
     private List<RideDTO> ownerRides;
 
+    static OwnerDTO mapToOwnerDTO(User user){
+        return OwnerDTO.builder()
+                .ownerId(user.getIdUser())
+                .firstName(user.getFirstName())
+                .surname(user.getSurname())
+                .ownerRides(RideDTO.getRidesDTOFromRides(user.getOwnerRide()))
+                .build();
+    }
 }

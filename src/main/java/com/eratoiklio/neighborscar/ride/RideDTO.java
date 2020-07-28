@@ -21,6 +21,8 @@ public class RideDTO {
                         .idRide(ride.getIdRide())
                         .rideFrom(ride.getRideFrom())
                         .rideTo(ride.getRideTo())
+                        .rideDate(ride.getRideDate())
+                        .seats(ride.getSeats())
                         .build())
                 .collect(Collectors.toList());
     }

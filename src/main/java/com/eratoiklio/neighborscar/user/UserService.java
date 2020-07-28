@@ -19,5 +19,10 @@ public class UserService {
                 .orElseThrow();;
        return user;
     }
+    public User getUser(Long id){
+        User user = repository.findById(id)
+                .orElseThrow();;
+        return user;
+    }
 
 }
