@@ -17,4 +17,7 @@ public class RideService {
         return rides;
     }
 
+    public List<Ride> getRidesByCriteria(RideRequest rideRequest) {
+        return repository.getRidesByCriteria(rideRequest);
+    }
 }
