@@ -20,11 +20,9 @@ public class Ride {
     private String rideTo;
     private Date rideDate;
     private int seats;
-    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "id_owner")
     private User owner;
-    @JsonIgnore
     @ManyToMany(mappedBy = "joinedRides")
     private List<User> joinedUser;
 }

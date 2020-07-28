@@ -14,10 +14,6 @@ import java.util.List;
 public class UserService {
     private final UserRepository repository;
 
-    public  List<User>  getAllUsers(){
-        List<User>users = repository.findAll();
-        return users;
-    }
     public User getOwner(Long id){
         User user = repository.findById(id)
                 .orElseThrow();;

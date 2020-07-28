@@ -1,5 +1,6 @@
 package com.eratoiklio.neighborscar.user;
 
+import com.eratoiklio.neighborscar.ride.RideDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,11 +13,6 @@ public class UserController {
 
       private final UserService service;
 
-        @GetMapping(value = "users")
-        public List<User> getAllUsers() {
-            List<User> users = service.getAllUsers();
-            return users;
-        }
     @GetMapping(value = "owner/{id}")
     public OwnerDTO getOwner(@PathVariable long id) {
         OwnerDTO ownerDTO = mapToOwnerDTO(service.getOwner(id));
@@ -27,7 +23,7 @@ public class UserController {
         .ownerId(user.getIdUser())
                 .firstName(user.getFirstName())
                 .surname(user.getSurname())
-                .ownerRides(user.getOwnerRide())
+                .ownerRides(RideDTO.getRidesDTOFromRides(user.getOwnerRide()))
                 .build();
     }
 }
