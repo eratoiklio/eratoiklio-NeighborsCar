@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -18,7 +19,7 @@ public class Ride {
     private Long idRide;
     private String rideFrom;
     private String rideTo;
-    private Date rideDate;
+    private LocalDateTime rideDate;
     private int seats;
     @ManyToOne
     @JoinColumn(name = "id_owner")
