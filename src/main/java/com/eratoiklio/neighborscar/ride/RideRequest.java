@@ -3,13 +3,13 @@ package com.eratoiklio.neighborscar.ride;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
-import java.util.Date;
+import java.time.LocalDateTime;
+import java.util.Optional;
 
 @NoArgsConstructor
 @Getter
 public class RideRequest {
     private String rideFrom;
     private String rideTo;
-    private Date date;
+    private LocalDateTime date;
 }
