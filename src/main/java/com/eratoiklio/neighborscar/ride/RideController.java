@@ -17,7 +17,7 @@ public class RideController {
         return rides;
     }
 
-    @PostMapping(value = "ride")
+    @PostMapping(value = "search")
     public List<RideDTO> getRidesByCriteria(@RequestBody RideRequest rideRequest) {
         List<Ride> rides = service.getRidesByCriteria(rideRequest);
         return RideDTO.getRidesDTOFromRides(rides);

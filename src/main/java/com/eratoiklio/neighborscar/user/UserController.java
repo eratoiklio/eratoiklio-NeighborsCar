@@ -1,10 +1,10 @@
 package com.eratoiklio.neighborscar.user;
 
+import com.eratoiklio.neighborscar.ride.Ride;
 import com.eratoiklio.neighborscar.ride.RideDTO;
+import com.eratoiklio.neighborscar.ride.RideRequest;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 @RestController
@@ -22,6 +22,11 @@ public class UserController {
     public PassengerDTO getPassenger(@PathVariable long id) {
         PassengerDTO passengerDTO = PassengerDTO.mapToPassengerDTO(service.getUser(id));
         return passengerDTO;
+    }
+    @PostMapping(value = "user")
+    public List<UserDTO> getUserByNam(@RequestBody UserRequest userRequest) {
+        List<User> users = service.getUserByName(userRequest);
+        return UserDTO.getUsersDTOFromUsers(users);
     }
 
 }

@@ -1,7 +1,8 @@
 package com.eratoiklio.neighborscar.user;
 
+import com.eratoiklio.neighborscar.ride.RideRepositoryCustom;
 import com.eratoiklio.neighborscar.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface UserRepository extends JpaRepository<User, Long>, UserRepositoryCustom {
 }

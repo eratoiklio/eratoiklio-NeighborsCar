@@ -1,5 +1,7 @@
 package com.eratoiklio.neighborscar.user;
 
+import com.eratoiklio.neighborscar.ride.Ride;
+import com.eratoiklio.neighborscar.ride.RideRequest;
 import com.eratoiklio.neighborscar.user.User;
 import com.eratoiklio.neighborscar.user.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -24,5 +26,7 @@ public class UserService {
                 .orElseThrow();;
         return user;
     }
-
+    public List<User> getUserByName(UserRequest userRequest) {
+        return repository.getUserByName(userRequest);
+    }
 }

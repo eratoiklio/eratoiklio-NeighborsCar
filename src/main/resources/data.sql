@@ -1,5 +1,5 @@
 insert into user(first_name, surname) values ('Ada', 'Mazurkiewicz');
-insert into user(first_name, surname) values ('Grzegorz', 'Kozlowski');
+insert into user(first_name, surname) values ('Monika', 'Budziok');
 insert into user(first_name, surname) values ('Diana', 'Artemida');
 
 insert into ride(ride_from, ride_to, ride_date, seats,id_owner ) values ('Warsaw', 'Legionowo', '2020-09-12 08:00:00', 4, 1);

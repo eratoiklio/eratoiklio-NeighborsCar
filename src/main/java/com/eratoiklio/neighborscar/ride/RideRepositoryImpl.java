@@ -18,10 +18,13 @@ public class RideRepositoryImpl implements RideRepositoryCustom {
     @Override
     public List<Ride> getRidesByCriteria(RideRequest rideRequest) {
         String queryString = "SELECT r FROM Ride r " +
-                "WHERE r.rideFrom LIKE CONCAT('%', :rideFrom, '%')";
+                "WHERE r.rideFrom LIKE CONCAT('%', :rideFrom, '%') " +
+                "AND r.rideTo = :rideTo";
         Query query = entityManager
                 .createQuery(queryString, Ride.class);
-        query.setParameter("rideFrom", rideRequest.getRideFrom());
+        query.setParameter("rideFrom", rideRequest.getRideFrom())
+            .setParameter("rideTo", rideRequest.getRideTo());
+       //.setParameter("date", rideRequest.getDate());
         return query.getResultList();
     }
 }
